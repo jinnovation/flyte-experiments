@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "flyte-experiments"
+version = "0.1.0"
+description = "Experiments in Flyte"
+authors = ["Jonathan Jin <me@jonathanj.in>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+flytekit = "^0.31.0"
+
+[tool.poetry.dev-dependencies]
+python-lsp-server = "^1.4.0"
+python-lsp-black = "^1.1.0"
+pylsp-mypy = "^0.5.7"
+pyls-isort = "^0.2.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

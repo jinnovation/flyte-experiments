@@ -1,0 +1,60 @@
+#+TITLE: Flyte Experiments
+#+AUTHOR: Jonathan Jinnovation
+
+* About This Repo
+
+  This repo contains personal experiments around [[https://flyte.org][Flyte]]. Generally, it explores
+  the question of: *what's it like to build a platform on top of Flyte?* As
+  such, we explore topics like:
+
+  - Extension via both "custom task types" or backend extensions;
+  - Constructing and submitting workflows, task instances, etc. dynamically,
+    i.e. without using =flytectl=.
+
+
+  Despite its task-oriented structure and approach, this repo is *not* a
+  koans-style tutorial for Flyte. The focus is solidly *not* on explaining Flyte
+  concepts and mechanisms in and of themselves; any explanation is exclusively
+  in service of explaining/exploring the task/approach at hand.
+
+* Getting Started
+
+  - Clone this repo
+  - Create a new virtualenv (I recommend using [[https://github.com/pyenv/pyenv][pyenv]] and [[https://github.com/pyenv/pyenv-virtualenv][pyenv-virtualenv]]);
+  - =poetry install=
+
+
+  This repo revolves around use of a Flyte [[https://docs.flyte.org/projects/flytectl/en/latest/gen/flytectl_sandbox_start.html][sandbox]].
+
+  First, install [[https://docs.flyte.org/projects/flytectl/en/latest/gen/flytectl.html#flytectl][flytectl]]:
+
+   #+begin_src bash
+     brew install flyteorg/homebrew-tap/flytectl
+   #+end_src
+
+   Then, start the sandbox via:
+
+   #+begin_src bash
+     flytectl sandbox start --source .
+   #+end_src
+
+* TODO [0/2] Tasks
+
+** TODO Creating, submitting, and executing workflow entirely via code
+
+   - Goal :: Come up with general recipe for end-to-end flow that entirely
+     circumvents =flytectl= for packaging, publication, etc.; how much of this
+     can we accomplish in Python code?
+
+** TODO [0/2] Extensions
+
+*** TODO Backend extensions
+
+    - Goal :: Write a [[https://docs.flyte.org/projects/cookbook/en/latest/auto/core/extend_flyte/backend_plugins.html][backend plugin]] for Flyte; take advantage of it in a
+      pipeline to do something not natively supported in "vanilla Flyte" --
+      maybe [[https://en.wikipedia.org/wiki/Gang_scheduling][gang scheduling]] (potentially relevant for distributed training use
+      cases e.g. via [[https://horovod.readthedocs.io/en/latest/][Horovod]])?
+
+*** TODO Task plugin
+
+    - Goal :: Write a [[https://docs.flyte.org/projects/cookbook/en/latest/auto/core/extend_flyte/custom_task_plugin.html][Flytekit task plugin]]
