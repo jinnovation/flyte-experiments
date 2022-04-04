@@ -46,6 +46,9 @@
      circumvents =flytectl= for packaging, publication, etc.; how much of this
      can we accomplish in Python code?
 
+
+   Stretch the [[https://docs.flyte.org/projects/cookbook/en/latest/auto/core/flyte_basics/imperative_wf_style.html#sphx-glr-auto-core-flyte-basics-imperative-wf-style-py][imperative workflow]] API to its limits, in other words.
+
 ** TODO [0/2] Extensions
 
 *** TODO Backend extensions
